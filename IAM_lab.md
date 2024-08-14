@@ -1,5 +1,5 @@
 Assuming a role in AWS CLI allows you to temporarily gain access to AWS resources that are allowed under a different role, which is useful for managing cross-account access or following the principle of least privilege. Here's a step-by-step guide on how to assume a role using the AWS CLI:
-Step 1: Configure Your AWS CLI
+### Step 1: Configure Your AWS CLI
 
 Ensure that your AWS CLI is configured with your IAM user credentials.
 
@@ -7,7 +7,7 @@ Ensure that your AWS CLI is configured with your IAM user credentials.
 aws configure
 ```
 You'll be prompted to enter your AWS Access Key ID, AWS Secret Access Key, Default region name, and Default output format.
-Step 2: Assume the Role Using sts assume-role
+### Step 2: Assume the Role Using sts assume-role
 
 To assume a role, use the aws sts assume-role command. You'll need the ARN (Amazon Resource Name) of the role you want to assume, and optionally, a session name.
 
@@ -19,7 +19,7 @@ aws sts assume-role \
 Replace arn:aws:iam::123456789012:role/RoleName with the actual ARN of the role you want to assume, and SessionName with a name for the session (this can be any string).
 
 This command will return a JSON object containing temporary security credentials (AccessKeyId, SecretAccessKey, SessionToken) and an expiration time.
-Step 3: Export the Temporary Credentials
+### Step 3: Export the Temporary Credentials
 
 After you get the temporary credentials from the assume-role command, you need to set them as environment variables so that the AWS CLI uses them for subsequent commands.
 
@@ -30,7 +30,7 @@ export AWS_SECRET_ACCESS_KEY=<SecretAccessKey>
 export AWS_SESSION_TOKEN=<SessionToken>
 ```
 Replace <AccessKeyId>, <SecretAccessKey>, and <SessionToken> with the corresponding values from the JSON output of the assume-role command.
-Step 4: Use the Assumed Role
+### Step 4: Use the Assumed Role
 
 Now that the temporary credentials are set, you can use the AWS CLI to perform actions with the assumed role's permissions.
 
@@ -40,7 +40,7 @@ For example:
 aws s3 ls
 ```
 This command will list the S3 buckets that the assumed role has access to.
-Step 5: Revert to Your Original Credentials (Optional)
+### Step 5: Revert to Your Original Credentials (Optional)
 
 Once you're done using the assumed role, you can unset the temporary credentials and revert to your original IAM user credentials.
 
