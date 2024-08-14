@@ -1,3 +1,4 @@
+## LAB 
 Assuming a role in AWS CLI allows you to temporarily gain access to AWS resources that are allowed under a different role, which is useful for managing cross-account access or following the principle of least privilege. Here's a step-by-step guide on how to assume a role using the AWS CLI:
 ### Step 1: Configure Your AWS CLI
 
