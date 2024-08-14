@@ -72,3 +72,33 @@ A trust policy in AWS is a critical component of IAM roles, defining which entit
 - **Use Conditions Wisely**: Leverage conditions to add additional layers of security, such as requiring specific tags or attributes before a role can be assumed.
 
 By understanding and properly configuring trust policies, you can effectively manage role assumptions and secure access to your AWS resources.
+
+# Instance profile 
+Instance profile in AWS is a container for an IAM role that can be used to pass role information to an EC2 instance when it starts. Here are the key aspects of instance profiles:
+
+### Key Features of Instance Profiles
+
+- **Container for IAM Roles**: An instance profile acts as a container for an IAM role. It allows the role to be associated with an EC2 instance, enabling the instance to use the permissions defined in the role.
+
+- **Automatic Creation**: When you create an IAM role using the AWS Management Console for EC2, an instance profile with the same name as the role is automatically created. This simplifies the process of associating roles with instances.
+
+- **Role Association**: An instance profile can contain only one IAM role, although a role can be included in multiple instance profiles. This means that each EC2 instance can assume the role associated with its instance profile to access AWS resources securely.
+
+- **Temporary Security Credentials**: When an EC2 instance is launched with an instance profile, AWS generates temporary security credentials for the role. These credentials are automatically rotated and managed by AWS, reducing the need for manual credential management.
+
+### Use Cases
+
+- **Secure Access to AWS Resources**: Instance profiles are used to securely grant EC2 instances access to AWS resources without needing to manage long-term credentials like access keys. This is particularly useful for applications running on EC2 that need to interact with other AWS services, such as S3 or DynamoDB.
+
+- **Infrastructure as Code (IaC)**: When using IaC tools like AWS CloudFormation, instance profiles are explicitly created and associated with EC2 instances to ensure the correct permissions are applied.
+
+### Benefits
+
+- **Security**: By using instance profiles, you avoid embedding credentials in your applications, which enhances security by reducing the risk of credential leakage.
+
+- **Simplicity**: AWS handles the creation and rotation of temporary credentials, simplifying credential management.
+
+- **Flexibility**: You can easily change the permissions of an EC2 instance by updating the role associated with its instance profile.
+
+In summary, instance profiles are a key mechanism in AWS for securely managing permissions for EC2 instances, leveraging IAM roles to provide temporary credentials and access to AWS resources.
+
