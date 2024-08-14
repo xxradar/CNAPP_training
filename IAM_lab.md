@@ -54,7 +54,7 @@ Example Script
 
 Here’s a simple bash script that automates the process:
 
-bash
+```bash
 
 #!/bin/bash
 
@@ -74,6 +74,7 @@ export AWS_SESSION_TOKEN=$(echo $CREDENTIALS | jq -r .SessionToken)
 unset AWS_ACCESS_KEY_ID
 unset AWS_SECRET_ACCESS_KEY
 unset AWS_SESSION_TOKEN
+```
 
 This script uses jq to parse the JSON output. Make sure you have jq installed (sudo apt-get install jq on Debian-based systems).
 
