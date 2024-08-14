@@ -78,17 +78,15 @@ print(f"Roles that can be assumed by {identity['Arn']}:")
 for role in assumable_roles:
     print(role)
 ```
-Explanation of the Script:
+#### Explanation of the Script:
+Session Initialization: The script starts by initializing a Boto3 session.
+STS Client: The script uses the STS client to get the identity of the current user or role.
+List Roles: It lists all roles using the list_roles API.
+Check Trust Policy: For each role, it checks the trust policy to see if the current user, role, or account is allowed to assume the role.
+Output: It prints out the list of roles that the user can assume.
 
-    Session Initialization: The script starts by initializing a Boto3 session.
-    STS Client: The script uses the STS client to get the identity of the current user or role.
-    List Roles: It lists all roles using the list_roles API.
-    Check Trust Policy: For each role, it checks the trust policy to see if the current user, role, or account is allowed to assume the role.
-    Output: It prints out the list of roles that the user can assume.
-
-Limitations:
-
-    This script checks only roles within the same AWS account. Cross-account role assumption would require additional considerations.
-    The process relies on the permissions of the user running the script. The user needs permission to list roles and retrieve their trust policies.
+#### Limitations:
+This script checks only roles within the same AWS account. Cross-account role assumption would require additional considerations.
+The process relies on the permissions of the user running the script. The user needs permission to list roles and retrieve their trust policies.
 
 This approach should give you a list of all roles that the current user or role can assume, either directly or by checking trust policies.
