@@ -102,3 +102,28 @@ Instance profile in AWS is a container for an IAM role that can be used to pass 
 
 In summary, instance profiles are a key mechanism in AWS for securely managing permissions for EC2 instances, leveraging IAM roles to provide temporary credentials and access to AWS resources.
 
+When an instance profile is assigned to an EC2 instance, it allows the instance to consume the IAM role associated with the profile. Here’s how you can use this setup:
+
+### Consuming an Instance Profile on an EC2 Instance
+
+- **Automatic Credential Management**:
+    - When you assign an instance profile to an EC2 instance, AWS automatically provides the instance with temporary security credentials. These credentials are associated with the IAM role in the instance profile and are automatically rotated by AWS, eliminating the need for manual credential management.
+
+- **Accessing Temporary Credentials**:
+    - The temporary credentials provided by the instance profile can be accessed through the EC2 instance metadata service. You can retrieve these credentials by querying the metadata URL `http://169.254.169.254/latest/meta-data/iam/security-credentials/`. This URL returns the role name and associated credentials, such as the access key, secret key, and session token.
+
+- **Using AWS CLI or SDK**:
+    - Applications running on the EC2 instance can use the AWS CLI or AWS SDKs to make API requests to other AWS services. These tools automatically use the temporary credentials provided by the instance profile, allowing the application to interact with AWS resources securely.
+    - For example, you can run AWS CLI commands without manually configuring credentials on the instance. The CLI will automatically use the temporary credentials from the instance profile to authenticate requests.
+
+### Security Best Practices
+
+- **Enhanced Security**:
+    - Using instance profiles is a best practice as it avoids hardcoding access keys in your application code. This enhances security by reducing the risk of credential leakage and simplifies credential management.
+
+- **Principle of Least Privilege**:
+    - Ensure that the IAM role associated with the instance profile has the minimum necessary permissions (principle of least privilege) to perform the required tasks.
+
+By leveraging instance profiles, you can securely manage and consume IAM roles on EC2 instances, allowing applications to access AWS resources without the need for embedded credentials.
+
+
