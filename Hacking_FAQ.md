@@ -1,4 +1,6 @@
-# 1. To obtain all the roles that a user or identity can assume in AWS, you generally need to perform a combination of the following steps:
+# 1. Obtain all the roles that a user or identity can assume in AWS
+You generally need to perform a combination of the following steps:
+
 ### 1. List All IAM Roles
 
 You can list all IAM roles in your account, but this doesn't tell you if the current user can assume them. Use the following command:
