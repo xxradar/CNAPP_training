@@ -115,7 +115,22 @@ When an instance profile is assigned to an EC2 instance, it allows the instance 
 - **Using AWS CLI or SDK**:
     - Applications running on the EC2 instance can use the AWS CLI or AWS SDKs to make API requests to other AWS services. These tools automatically use the temporary credentials provided by the instance profile, allowing the application to interact with AWS resources securely.
     - For example, you can run AWS CLI commands without manually configuring credentials on the instance. The CLI will automatically use the temporary credentials from the instance profile to authenticate requests.
+```
+aws s3 ls
+aws s3 ls --debug
+```
+```
+import boto3
 
+# Create an S3 client
+s3_client = boto3.client('s3')
+
+# List all buckets
+response = s3_client.list_buckets()
+for bucket in response['Buckets']:
+    print(bucket['Name'])
+
+```
 ### Security Best Practices
 
 - **Enhanced Security**:
