@@ -33,6 +33,8 @@ If you want to automate the process of finding all roles a user can assume, you 
     For each role, check its trust policy to see if it includes the current user, role, or account.
     Output the roles that the user can assume.
 
+### Sample script
+
 Here’s a simple example of a Python script using the AWS SDK (boto3) that automates this process:
 
 ```python
