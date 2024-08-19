@@ -1,6 +1,6 @@
 # Cloud-Native Application Protection Platforms (CNAPPs)
 
-CNAPPs are essential for securing cloud-native applications and infrastructure. They originate from different technological backgrounds, primarily cloud Infrastructure as a Service (IaaS) and Kubernetes, which influences their capabilities and focus areas. Here's an overview to help your management understand these origins and the considerations when choosing a CNAPP vendor:
+CNAPPs are essential for securing cloud-native applications and infrastructure. They originate from different technological backgrounds, primarily cloud Infrastructure as a Service (IaaS) and Kubernetes, which influences their capabilities and focus areas. Here's an overview to help understand these origins and the considerations when choosing a CNAPP vendor:
 
 ## Origins of CNAPP Vendors
 
