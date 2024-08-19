@@ -44,3 +44,5 @@ Here's a table listing some CNAPP vendors and their respective backgrounds, base
 | **Sysdig**               | Kubernetes and container security               |
 
 These vendors have different origins, which influence their focus and capabilities. When choosing a CNAPP vendor, it is crucial to consider your organization's specific needs and the vendor's strengths in either cloud infrastructure or Kubernetes environments.
+References: https://www.seohorizon.com/security/top-cnapp-vendors/
+
