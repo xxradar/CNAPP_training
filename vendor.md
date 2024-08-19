@@ -30,3 +30,17 @@ CNAPPs are essential for securing cloud-native applications and infrastructure. 
 - **Cost-Effectiveness:** Assess the cost-effectiveness of the CNAPP by considering the potential for consolidating multiple security tools into a single platform. This can lead to cost savings and simplified security management.
 
 By understanding the origins and capabilities of CNAPP vendors, your organization can make informed decisions that align with its security needs and technological infrastructure.
+
+
+Here's a table listing some CNAPP vendors and their respective backgrounds, based on the information available:
+
+| **Vendor**               | **Background**                                  |
+|--------------------------|-------------------------------------------------|
+| **Aqua Security**        | Kubernetes and container security               |
+| **Wiz**                  | Cloud IaaS and asset management                 |
+| **CrowdStrike Falcon**   | Cloud security with a focus on adversary detection |
+| **Check Point CloudGuard** | Cloud IaaS security                           |
+| **Prisma Cloud**         | Cloud IaaS security                             |
+| **Sysdig**               | Kubernetes and container security               |
+
+These vendors have different origins, which influence their focus and capabilities. When choosing a CNAPP vendor, it is crucial to consider your organization's specific needs and the vendor's strengths in either cloud infrastructure or Kubernetes environments.
