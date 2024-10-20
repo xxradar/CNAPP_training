@@ -36,7 +36,7 @@ aws ec2 associate-address \
     --network-interface-id $ENI_ID\
     --private-ip-address "10.1.1.221"
 ```
-### This will not fail
+### Existing allocation can be associated !
 ```
 aws ec2 associate-address \
     --allocation-id eipalloc-0130a4659a3849f09 \
