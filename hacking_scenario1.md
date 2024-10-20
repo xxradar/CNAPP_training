@@ -43,6 +43,37 @@ aws ec2 associate-address \
     --network-interface-id $ENI_ID \
     --private-ip-address "10.1.1.221"
 ```
+
+### Trying to figure out your role
+```
+ROLE_NAME=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/iam/info | jq -r '.InstanceProfileArn' | cut -d '/' -f 2)
+echo $ROLE_NAME
+```
+Things to try:<br>
+Attached Roles:
+```
+aws iam list-attached-role-policies --role-name $ROLE_NAME
+```
+Inline policies:
+```
+aws iam list-role-policies --role-name $ROLE_NAME
+```
+Try to simulate
+```
+aws iam get-policy --policy-arn <policy-arn>
+aws iam get-role-policy --role-name $ROLE_NAME --policy-name <policy-name>
+```
+Bruteforcing ...
+```
+aws iam simulate-principal-policy --policy-source-arn $ROLE_ARN --action-names "s3:ListBucket" "ec2:DescribeInstances"
+```
+```
+# Check if you can list S3 buckets
+aws s3 ls
+
+# Check if you can describe EC2 instances
+aws ec2 describe-instances
+```
 ## Policies for reference
 ```
 {
