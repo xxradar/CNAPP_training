@@ -19,20 +19,26 @@ aws ec2 assign-private-ip-addresses \
     --secondary-private-ip-address-count 1 \
     --allow-reassignment
 ```
-### This will fail -- no access to EIP
+or 
+```
+aws ec2 assign-private-ip-addresses \
+    --network-interface-id $ENI_ID \
+    --private-ip-addresses "10.1.1.221" \
+    --allow-reassignment
+```
+### This will fail -- no priviledge to allocate EIP
 ```
 ALLOCATE_ID=$(aws ec2 allocate-address --domain vpc)
 ```
-### This will fail -- no access to EIP
 ```
 aws ec2 associate-address \
-    --allocation-id eipalloc-0130a4659a3849f09 \
-    --network-interface-id $ENI_ID \
+    --allocation-id $ALLOCATE_ID \
+    --network-interface-id $ENI_ID\
     --private-ip-address "10.1.1.221"
 ```
 ### This will not fail
 ```
-[ec2-user@ip-10-1-1-169 ~]$ aws ec2 associate-address \
+aws ec2 associate-address \
     --allocation-id eipalloc-0130a4659a3849f09 \
     --network-interface-id $ENI_ID \
     --private-ip-address "10.1.1.221"
