@@ -1,12 +1,12 @@
 # Box has an assigned ROLE
-## Use STS to get access tokens
+### Use STS to get access tokens
 ```
 TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
 ```
 ```
 INSTANCE_ID=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/instance-id)
 ```
-## Find the network interface
+### Find the network interface and assign an additional IP address
 ```
 ENI_ID=$(aws ec2 describe-instances \
     --instance-ids $INSTANCE_ID \
