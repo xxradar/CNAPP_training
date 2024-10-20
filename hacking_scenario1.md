@@ -43,3 +43,43 @@ aws ec2 associate-address \
     --network-interface-id $ENI_ID \
     --private-ip-address "10.1.1.221"
 ```
+## Policies for reference
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Action": [
+				"ec2:Describe*",
+				"ec2:AssociateAddress",
+				"ec2:AssignPrivateIpAddresses",
+				"ec2:UnassignPrivateIpAddresses",
+				"ec2:ReplaceRoute"
+			],
+			"Effect": "Allow",
+			"Resource": "*"
+		},
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": [],
+			"Resource": []
+		}
+	]
+}
+```
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "ec2.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+```
