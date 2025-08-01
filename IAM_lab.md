@@ -30,7 +30,7 @@ export AWS_ACCESS_KEY_ID=<AccessKeyId>
 export AWS_SECRET_ACCESS_KEY=<SecretAccessKey>
 export AWS_SESSION_TOKEN=<SessionToken>
 ```
-Replace <AccessKeyId>, <SecretAccessKey>, and <SessionToken> with the corresponding values from the JSON output of the assume-role command.
+Replace `<AccessKeyId>, <SecretAccessKey>, and <SessionToken>` with the corresponding values from the JSON output of the assume-role command.
 ### Step 4: Use the Assumed Role
 
 Now that the temporary credentials are set, you can use the AWS CLI to perform actions with the assumed role's permissions.
