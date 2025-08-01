@@ -52,7 +52,7 @@ unset AWS_SESSION_TOKEN
 ```
 Or you can simply close the terminal session to clear the environment variables.
 
-### Here’s a simple bash script that automates the process:
+### Example script that automates the process:
 
 ```bash
 
