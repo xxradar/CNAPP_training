@@ -17,7 +17,7 @@ aws sts assume-role \
     --role-arn arn:aws:iam::123456789012:role/RoleName \
     --role-session-name SessionName
 ```
-Replace arn:aws:iam::123456789012:role/RoleName with the actual ARN of the role you want to assume, and SessionName with a name for the session (this can be any string).
+Replace `arn:aws:iam::123456789012:role/RoleName` with the actual ARN of the role you want to assume, and SessionName with a name for the session (this can be any string).
 
 This command will return a JSON object containing temporary security credentials (AccessKeyId, SecretAccessKey, SessionToken) and an expiration time.
 ### Step 3: Export the Temporary Credentials
