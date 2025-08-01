@@ -51,7 +51,6 @@ unset AWS_SECRET_ACCESS_KEY
 unset AWS_SESSION_TOKEN
 ```
 Or you can simply close the terminal session to clear the environment variables.
-Example Script
 
 ### Here’s a simple bash script that automates the process:
 
